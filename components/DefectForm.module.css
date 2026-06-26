@@ -273,3 +273,14 @@
 @media (max-width: 480px) {
   .row { grid-template-columns: 1fr; }
 }
+
+.barcodeTip {
+  font-size: 13px;
+  color: #7A5C00;
+  background: #FEF9E7;
+  border: 1px solid #E8C84A;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  line-height: 1.6;
+}
