@@ -84,8 +84,9 @@ export default function DefectForm() {
     setProgress(30)
 
     try {
-      const res = await fetch(APPS_SCRIPT_URL, {
+      const res = await fetch('/api/submit', {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
       const json = await res.json()
