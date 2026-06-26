@@ -5,7 +5,7 @@ import styles from './DefectForm.module.css'
 
 const STORES = ['AS62 南西IP店', 'AS70 西門IP店']
 const DEFECT_TYPES = ['進貨損壞', '陳列耗損']
-const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
+
 
 export default function DefectForm() {
   const [store, setStore] = useState('')
