@@ -1,0 +1,29 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F5F3EE;
+  --surface: #FDFCFA;
+  --surface2: #F0EDE6;
+  --border: #DDD9D0;
+  --text: #1C1A16;
+  --muted: #6B6760;
+  --hint: #A09C95;
+  --accent: #C4440A;
+  --accent-light: #FAE8E0;
+  --success: #1A7A4A;
+  --success-light: #E3F5EC;
+  --yellow: #FEF9E7;
+  --yb: #E8C84A;
+  --yt: #7A5C00;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+html, body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}

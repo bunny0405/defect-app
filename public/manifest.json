@@ -1,0 +1,22 @@
+{
+  "name": "瑕疵品通報系統",
+  "short_name": "瑕疵通報",
+  "description": "門市瑕疵品通報系統",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F3EE",
+  "theme_color": "#C4440A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
