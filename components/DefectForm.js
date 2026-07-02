@@ -1,5 +1,6 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
+import BarcodeScanner from './BarcodeScanner'
 import styles from './DefectForm.module.css'
 
 const STORES = ['AS62 南西IP店', 'AS70 西門IP店']
@@ -20,6 +21,7 @@ export default function DefectForm() {
   const [error, setError] = useState('')
   const [progress, setProgress] = useState(0)
   const [submitting, setSubmitting] = useState(false)
+  const [showScanner, setShowScanner] = useState(false)
   const [success, setSuccess] = useState(null)
   const fileInputRef = useRef()
 
@@ -103,7 +105,7 @@ export default function DefectForm() {
     setStaff(''); setBarcode(''); setQty(1); setDefectType('')
     setDesc(''); setTransferNo(''); setTransferNote('')
     setMediaFiles([]); setError(''); setProgress(0)
-    setSubmitting(false); setSuccess(null)
+    setSubmitting(false); setSuccess(null); setShowScanner(false)
   }
 
   if (success) {
@@ -193,16 +195,25 @@ export default function DefectForm() {
           </div>
           <div className={styles.field}>
             <label>商品條碼<span className={styles.req}>*</span></label>
-            <input
-              type="text"
-              inputMode="numeric"
-              placeholder="點此輸入條碼"
-              value={barcode}
-              onChange={e => setBarcode(e.target.value)}
-              autoComplete="off"
-            />
-            <div className={styles.barcodeTip}>
-              📷 iOS：點欄位後鍵盤上方有相機圖示，對準條碼即可自動填入
+            <div className={styles.barcodeRow}>
+              <input
+                type="text"
+                inputMode="numeric"
+                placeholder="輸入或掃描條碼"
+                value={barcode}
+                onChange={e => setBarcode(e.target.value)}
+              />
+              <button className={styles.scanBtn} onClick={() => setShowScanner(true)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/>
+                  <line x1="7" y1="8" x2="7" y2="16"/>
+                  <line x1="10" y1="8" x2="10" y2="16"/>
+                  <line x1="13" y1="8" x2="13" y2="12"/>
+                  <line x1="16" y1="8" x2="16" y2="16"/>
+                  <line x1="19" y1="12" x2="19" y2="16"/>
+                </svg>
+                掃描
+              </button>
             </div>
           </div>
           <div className={styles.field}>
